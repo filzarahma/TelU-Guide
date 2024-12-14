@@ -70,101 +70,96 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 <br><br>
 
 
-# TelU-Guide
+# TelU Guide
 
-TelU Guide is a website aimed at helping students find their destination locations within the Telkom University campus area, especially new students who are not yet familiar with the campus area.
+**TelU Guide** is a web application designed to assist students in navigating the Telkom University campus. It is particularly beneficial for new students unfamiliar with the campus layout. Built using the **Laravel Framework v11.35.1**, TelU Guide provides an intuitive interface and features such as an interactive campus map, making campus exploration seamless.
 
-## Screenshots
+---
 
-### Login Page
-![Login Page](docs/screenshots/TelU-Guide-Login-12-14-2024_07_04_PM.png)
+## Features
 
-### Register Page
-![Register Page](docs/screenshots/TelU-Guide-Register-12-14-2024_07_04_PM.png)
+### User Authentication
+- **Login**: A secure system for user authentication via email and password.  
+  ![Login Page](docs/screenshots/TelU-Guide-Login-12-14-2024_07_04_PM.png)
 
-### Forgot Password Page
-![Forgot Password Page](docs/screenshots/TelU-Guide-Forgot-Password-12-14-2024_07_04_PM.png)
+- **Register**: Quick and easy registration with input validation.  
+  ![Register Page](docs/screenshots/TelU-Guide-Register-12-14-2024_07_04_PM.png)
 
-### Dashboard Page
+- **Forgot Password**: Password recovery support via email.  
+  ![Forgot Password Page](docs/screenshots/TelU-Guide-Forgot-Password-12-14-2024_07_04_PM.png)
+
+### Dashboard
+A personalized dashboard for users to access essential campus information.  
 ![Dashboard Page](docs/screenshots/TelU-Guide-Dashboard-12-14-2024_07_05_PM.png)
 
 ### Interactive Map
+An interactive map that helps users locate destinations within the campus.  
 ![Interactive Map](docs/screenshots/TelU-Guide-Map-12-14-2024_07_05_PM.png)
 
-### User Profile Pages
-- **Student Profile**  
+### User Profiles
+- **Student Profile**: View detailed student profiles.  
   ![Student Profile](docs/screenshots/TelU-Guide-Student-Profile-12-14-2024_07_05_PM.png)
 
-- **Edit User Profile**  
+- **Edit User Profile**: Update user information with ease.  
   ![Edit User Profile](docs/screenshots/TelU-Guide-User-Edit-Profile-12-14-2024_07_05_PM.png)
 
-### Security Pages
-- **Security Information**  
+### Security Features
+- **Security Information**: Access detailed information about campus security.  
   ![Security Information](docs/screenshots/TelU-Guide-Security-Info-12-14-2024_07_05_PM.png)
 
-- **Security Profile**  
+- **Security Profiles**: Dedicated profiles for security personnel.  
   ![Security Profile](docs/screenshots/TelU-Guide-Security-Profile-12-14-2024_07_05_PM.png)
 
-- **Edit Security Profile**  
+- **Edit Security Profile**: Manage data for security personnel.  
   ![Edit Security Profile](docs/screenshots/TelU-Guide-Security-Edit-Profile-12-14-2024_07_05_PM.png)
 
 ---
 
 ## Installation Guide
 
-Follow the steps below to install and set up the TelU-Guide project. These instructions are based on the [Laravel 11 documentation](https://laravel.com/docs/11.x/installation).
+Follow the steps below to install and set up the TelU Guide project. For additional details, refer to the official [Laravel 11 documentation](https://laravel.com/docs/11.x/installation).
 
 ### Prerequisites
 
-Before starting, ensure your system meets the following requirements:
+Ensure your system meets the following requirements:
+- **PHP**: Version **8.2 to 8.4**
+- **Composer**: PHP dependency manager
 
-- PHP version: **8.2 to 8.4**
-- Composer (PHP dependency manager)
-
-For a full list of server requirements, refer to the [Laravel Server Requirements](https://laravel.com/docs/11.x/deployment#server-requirements).
-
----
+For additional details, refer to the [Laravel Server Requirements](https://laravel.com/docs/11.x/deployment#server-requirements).
 
 ### Installation Steps
 
 1. **Install PHP, Composer, and Laravel Installer**
-
-   For a quick setup on Windows, open PowerShell as an Administrator and run the following command:
-   ```powershell
-   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.4'))
-   ```
-
-   This command will automatically install PHP 8.4, Composer, and the Laravel Installer.
+   - If these components are not already installed, you can set them up manually or use the following command for a quick setup on Windows:
+     ```powershell
+     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.4'))
+     ```
+     This command installs PHP 8.4, Composer, and the Laravel Installer automatically. For installation on other platforms, refer to their respective guides.
 
 2. **Initialize Environment Configuration**
-
-   Copy the `.env.example` file to `.env` to set up the environment configuration:
-   ```bash
-   cp .env.example .env
-   ```
-
-   After copying, you can adjust the `.env` file as needed, such as setting the database connection or other environment variables.
+   - Navigate to the project directory and copy the `.env.example` file to `.env`:
+     ```bash
+     cp .env.example .env
+     ```
+   - Update the `.env` file with your environment settings, such as database credentials and application keys.
 
 3. **Install Project Dependencies**
-
-   Navigate to the project directory and run the following commands:
-   ```bash
-   composer install
-   composer update
-   php artisan key:generate
-   ```
+   - In the project directory, install the required dependencies and generate the application key:
+     ```bash
+     composer install
+     composer update
+     php artisan key:generate
+     ```
 
 4. **Start the Development Server**
-
-   Use the following command to start Laravel's local development server:
-   ```bash
-   composer run dev
-   ```
-
-   Once the server is running, open your browser and visit [http://localhost:8000](http://localhost:8000) to view your application.
+   - Launch the local development server with the following command:
+     ```bash
+     composer run dev
+     ```
+   - Open your browser and visit [http://localhost:8000](http://localhost:8000) to access the application.
 
 ---
 
 ## Advanced Configuration
 
-For additional setup options, such as environment variables or server deployment, refer to the [Laravel Configuration Documentation](https://laravel.com/docs/11.x/configuration).
+For advanced setup options, including server deployment and additional environment variables, consult the official [Laravel Configuration Documentation](https://laravel.com/docs/11.x/configuration).
