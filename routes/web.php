@@ -1,50 +1,81 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SecurityController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\DashboardController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::get (
+    '/',
+    [ AuthController::class, 'login' ]
+)->name ( 'login' );
 
-Route::get('/securityInfo', function () {
-    return view('securityInfo');
-});
+// Auth Routes [START]
+Route::prefix ( 'auth' )
+    ->group ( function ()
+    {
+        Route::get (
+            '/register',
+            [ AuthController::class, 'register' ]
+        )->name ( 'register' );
 
-Route::get('/securityProfile', function () {
-    return view('securityProfile');
-});
+        Route::get (
+            '/forgot-password',
+            [ AuthController::class, 'forgotPassword' ]
+        )->name ( 'forgot.password' );
+    } );
+// Auth Routes [END]
 
-Route::get('/userEditProfile', function () {
-    return view('userEditProfile');
-});
+// Security Routes [START]
+Route::prefix ( 'security' )
+    ->group ( function ()
+    {
+        Route::get (
+            '/info',
+            [ SecurityController::class, 'info' ]
+        )->name ( 'security.info' );
 
-Route::get('/userViewProfile', function () {
-    return view('userViewProfile');
-});
+        Route::get (
+            '/edit-profile',
+            [ SecurityController::class, 'editProfile' ]
+        )->name ( 'security.edit.profile' );
 
-Route::get('/securityEditProfile', function () {
-    return view('securityEditProfile');
-});
+        Route::get (
+            '/view-profile',
+            [ SecurityController::class, 'viewProfile' ]
+        )->name ( 'security.view.profile' );
+    } );
+// Security Routes [END]
 
-Route::get('/securityViewProfile', function () {
-    return view('securityViewProfile');
-});
+// User Routes [START]
+Route::prefix ( 'user' )
+    ->group ( function ()
+    {
+        Route::get (
+            '/edit-profile',
+            [ UserController::class, 'editProfile' ]
+        )->name ( 'user.edit.profile' );
 
-Route::get('/', function () {
-    return view('login');
-});
+        Route::get (
+            '/view-profile',
+            [ UserController::class, 'viewProfile' ]
+        )->name ( 'user.view.profile' );
+    } );
+// User Routes [END]
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+// Dashboard Routes [START]
+Route::prefix ( 'dashboard' )
+    ->group ( function ()
+    {
+        Route::get (
+            '/',
+            [ DashboardController::class, 'index' ]
+        )->name ( 'dashboard' );
 
-Route::get('/map', function () {
-    return view('map');
-});
+        Route::get (
+            '/map',
+            [ DashboardController::class, 'map' ]
+        )->name ( 'map' );
+    } );
+// Dashboard Routes [END]
